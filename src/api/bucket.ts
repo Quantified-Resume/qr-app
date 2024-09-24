@@ -1,9 +1,12 @@
 import { get } from "./request"
 
+export type Builtin = 'BrowserTime'
+
 export type Bucket = {
     id: number
     name: string
-    builtin: string
+    builtin?: Builtin
+    builtinRefId?: string
 }
 
 export async function listAllBuckets(): Promise<Bucket[]> {

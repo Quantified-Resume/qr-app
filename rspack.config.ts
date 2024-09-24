@@ -1,6 +1,7 @@
 import { defineConfig } from "@rspack/cli"
 import { rspack } from "@rspack/core"
 import * as RefreshPlugin from "@rspack/plugin-react-refresh"
+import { join } from "path"
 
 const isDev = process.env.NODE_ENV === "development"
 
@@ -13,7 +14,10 @@ export default defineConfig({
 		resume: "./src/resume/index.tsx"
 	},
 	resolve: {
-		extensions: ["...", ".ts", ".tsx", ".jsx"]
+		extensions: ["...", ".ts", ".tsx", ".jsx"],
+		alias: {
+			"@api": join(__dirname, "src", "api"),
+		},
 	},
 	devServer: {
 		port: 8080,
