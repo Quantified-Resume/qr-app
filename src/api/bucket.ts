@@ -9,6 +9,13 @@ export type Bucket = {
     builtinRefId?: string
 }
 
+export type BucketKey = {
+    id: number
+} | {
+    builtin: Builtin
+    builtinRefId?: string
+}
+
 export async function listAllBuckets(): Promise<Bucket[]> {
     return get("/bucket")
 }
