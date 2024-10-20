@@ -1,8 +1,9 @@
 import { Bucket, getBucketDetail } from "@api/bucket"
 import { Container } from "@mui/material"
+import Flex from "@resume/components/Flex"
+import Resume from "@resume/components/Resume"
 import { useRequest } from "ahooks"
 import { useMatch } from "react-router"
-import BrowserTime from "./BrowserTime"
 import Header from "./Header"
 
 async function queryDetail(idStr?: string): Promise<Bucket | undefined> {
@@ -20,12 +21,13 @@ const BucketDetail = () => {
 
     return (
         <Container style={{ marginTop: 40 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 30, width: '100%' }}>
+            <Flex flexDirection="column" gap={30} width="100%">
                 <Header value={detail} />
                 <div>
-                    {detail?.builtin === 'BrowserTime' && <BrowserTime bucketId={detail?.id} />}
+                    {detail?.id && <Resume bucketId={detail?.id} />}
+                    {/* {detail?.builtin === 'BrowserTime' && <BrowserTime bucketId={detail?.id} />} */}
                 </div>
-            </div>
+            </Flex>
         </Container>
     )
 }

@@ -2,8 +2,8 @@ import { DatePicker } from "@mui/x-date-pickers"
 import dayjs, { Dayjs } from "dayjs"
 
 type Props = {
-    value?: Dayjs | null
-    onChange?: (val: Dayjs | null) => void
+    value?: Dayjs
+    onChange?: (val?: Dayjs) => void
     label?: string
 }
 
@@ -17,7 +17,7 @@ const DateFilter = (props: Props) => {
             }}
             shouldDisableDate={(val: Dayjs) => val.isAfter(dayjs())}
             value={value}
-            onChange={onChange}
+            onChange={val => onChange?.(val ? val : undefined)}
             label={label}
         />
     )

@@ -19,6 +19,12 @@
         "paths": {
             "@api/*": [
                 "src/api/*"
+            ],
+            "@resume/*": [
+                "src/resume/*"
+            ],
+            "@util/*": [
+                "src/util/*"
             ]
         }
     },

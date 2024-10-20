@@ -17,6 +17,8 @@ export default defineConfig({
 		extensions: ["...", ".ts", ".tsx", ".jsx"],
 		alias: {
 			"@api": join(__dirname, "src", "api"),
+			"@resume": join(__dirname, "src", "resume"),
+			"@util": join(__dirname, "src", "util"),
 		},
 	},
 	devServer: {

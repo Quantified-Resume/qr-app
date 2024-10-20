@@ -1,18 +1,19 @@
 import { Divider } from "@mui/material"
 import { Outlet, Route, Routes } from "react-router"
 import { HashRouter } from "react-router-dom"
-import BucketDetail from "../components/BucketDetail"
+import BucketDetail from "../pages/BucketDetail"
 import Header from "./Header"
+import Flex from "@resume/components/Flex"
 
 const _Layout = () => {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Flex flexDirection="column">
             <Header />
             <Divider />
             <div style={{ width: '100%', flex: 1 }}>
                 <Outlet />
             </div>
-        </div>
+        </Flex>
     )
 }
 

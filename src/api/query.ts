@@ -22,5 +22,5 @@ export type ItemQueryResult = {
 }
 
 export function queryItems(req: ItemQueryRequest): Promise<ItemQueryResult> {
-    return post("/query/item", req)
+    return post("/query/plain", req)
 }

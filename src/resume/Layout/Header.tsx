@@ -4,6 +4,7 @@ import { useLocation, useMatch, useMatches, useNavigate } from "react-router"
 import { listAllBuckets } from "../../api/bucket"
 import { useEffect, useRef, useState } from "react"
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material"
+import Flex from "@resume/components/Flex"
 
 const calcInitialBucket = (pathname: string): number | null => {
     const pattern = /^\/bucket\/(?<bucketId>[^\/])\/?/
@@ -72,15 +73,14 @@ const BucketSelect = () => {
 
 const Header = () => {
     return (
-        <div style={{
-            display: 'flex',
-            height: 60,
-            width: '100%',
-            justifyContent: 'space-between',
-            padding: '0 40px',
-            boxSizing: 'border-box',
-            alignItems: 'center',
-        }}>
+        <Flex
+            height={60}
+            width='100%'
+            justifyContent="space-between"
+            padding="0 40px"
+            boxSizing="border-box"
+            alignItems="center"
+        >
             <div style={{ flex: 1, textAlign: 'start' }}>
                 <BucketSelect />
             </div>
@@ -90,7 +90,7 @@ const Header = () => {
             <div style={{ flex: 1, textAlign: 'end' }}>
                 Right
             </div>
-        </div>
+        </Flex>
     )
 }
 export default Header
